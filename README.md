@@ -3,33 +3,21 @@ A Python 3 based command line tool for determining a docker container associated
 
 ## Usage
 
-### Case 1
-Clone into the python path and run module as script via:
-
 ```
-$ python3 -m nvidiadockerstats.nvidiadockerstats
-```
-
-### Case 2
-Clone anywhere on network home, link, and run directly:
-
-```
-$ git clone https://github.com/cdw/nvidia-docker-stats.git
-$ ln nvidia-docker-stats/nvidiadockerstats/nvidiadockerstats.py ~/bin/nvidiadockerstats
-$ nvidiadockerstats
+$ sudo su
+$ cd /root
+$ git clone https://github.com/raiso777/nvidia-docker-stats.git
+$ ln /root/nvidia-docker-stats/nvidiadockerstats/nvidiadockerstats.py /bin/dgpustat
+$ dgpustat
 ```
 
 ### Example output
 ```
-Container       Image                   pid     gpu_uuid        used_memory     used_gpu
-9afcd2624a5b    shiva/keras
-					30920   0                11207 MiB       0 %
-					30920   1                11587 MiB       0 %
-					30920   2                11587 MiB       0 %
-					30920   3                11251 MiB       0 %
-5eca98f0fa0f    vishnu/pytorch_ext
-					8846    0                401 MiB         0 %
-					8846    3                353 MiB         0 %
+Container   	Names             	pid    	gpu_uuid	used_memory 	used_gpu
+188392f13203	jupyter-raiso
+                                        1212   	0       	 1703 MiB   	 0 %
+4f1d564b1d85	jupyter-rkaiii8813
+                                        24291  	0       	 1661 MiB   	 0 %
 ```
 
 ## License
