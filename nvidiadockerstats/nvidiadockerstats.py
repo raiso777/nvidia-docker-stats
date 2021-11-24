@@ -57,7 +57,7 @@ def renamekeys(d,names):
 def main():
     #get results of all commands without container arguments
     dockerps = commandtodictdict(['docker','ps','--format'],
-                                 ['ID','Image','Ports'],
+                                 ['ID','Names','Ports'],
                                  keycols = 'ID',
                                  queryargfmt = "'{0}'",
                                  colargfmt = "{{{{.{0}}}}}",
@@ -89,7 +89,7 @@ def main():
     
     #display fmt data
     basedisplaycols = collections.OrderedDict([('Container',12),
-                                               ('Image',18)])
+                                               ('Names',18)])
     optdisplaycols = collections.OrderedDict([('pid',7),
                                               ('gpu_uuid',8),
                                               ('used_memory',12),
